@@ -12,6 +12,7 @@
     <modules>
         <module>user</module>
         <module>education</module>
+        <module>storage</module>
     </modules>
 
 </project>
