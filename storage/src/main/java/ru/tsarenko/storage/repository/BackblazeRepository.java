@@ -1,10 +1,10 @@
 package ru.tsarenko.storage.repository;
 
 import org.springframework.stereotype.Repository;
-import ru.tsarenko.storage.config.backblaze.BackblazeCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.GetObjectRequest;
+import ru.tsarenko.storage.config.BackblazeConfig.BackblazeCredentialsProvider;
 
 import java.io.IOException;
 import java.net.URI;
