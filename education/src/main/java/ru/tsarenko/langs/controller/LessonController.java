@@ -1,27 +1,32 @@
 package ru.tsarenko.langs.controller;
 
+import org.bson.Document;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.tsarenko.langs.service.LessonService;
+
+import java.util.List;
 
 @RestController
+@RequestMapping("/education/lesson")
 public class LessonController {
 
-//    private final BackblazeRepository repository;
-//
-//    public LessonController(BackblazeRepository repository) {
-//        this.repository = repository;
-//    }
+    private final LessonService lessonService;
 
-//    @GetMapping(
-//            value = "/audio",
-//            produces = MediaType.APPLICATION_OCTET_STREAM_VALUE
-//    )
-//    public ResponseEntity<byte[]> getAudio() throws URISyntaxException, IOException {
-//
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.setContentType(MediaType.parseMediaType("audio/mpeg")); // Or MediaType.APPLICATION_OCTET_STREAM
-//
-//        return ResponseEntity.ok()
-//                .headers(headers)
-//                .body(repository.getImage());
-//    }
+    public LessonController(LessonService lessonService) {
+        this.lessonService = lessonService;
+    }
+
+    @GetMapping("/all")
+    public List<Document> getAllLessons() {
+        return lessonService.getAllLessons();
+    }
+
+    @GetMapping("/{id}")
+    public Document getLesson(@PathVariable String id) {
+        return lessonService.getLessonById(id);
+    }
+
 }
