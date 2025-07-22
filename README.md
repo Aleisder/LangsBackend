@@ -5,8 +5,8 @@ ___
 |-- education
 |   |-- config
 |   |-- controller
-|   |-- service
 |   |-- repository
+|   |-- service
 |-- notification
 |   |-- config
 |   |-- service
@@ -14,8 +14,8 @@ ___
 |   |-- config
 |   |-- controller
 |   |-- exception
-|   |-- service
 |   |-- repository
+|   |-- service
 |-- user
 |   |-- controller
 |   |-- model
