@@ -1,10 +1,10 @@
-package ru.tsarenko.langs.model.controller;
+package ru.tsarenko.langs.controller;
 
 import jakarta.websocket.server.PathParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.tsarenko.langs.model.service.UserService;
+import ru.tsarenko.langs.service.UserService;
 
 @RestController
 @RequestMapping("/user")

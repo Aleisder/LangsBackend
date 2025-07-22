@@ -1,4 +1,4 @@
-package ru.tsarenko.langs.model.service;
+package ru.tsarenko.langs.service;
 
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
