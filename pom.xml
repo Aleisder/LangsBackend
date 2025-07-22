@@ -13,6 +13,7 @@
         <module>user</module>
         <module>education</module>
         <module>storage</module>
+        <module>notification</module>
     </modules>
 
 </project>
