@@ -26,5 +26,6 @@ ___
 - Spring
 - Mongo
 - Kafka
+- PostgreSQL
 - [Backblaze](https://www.backblaze.com)
 ___
