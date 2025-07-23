@@ -26,6 +26,6 @@ ___
 - Spring
 - Mongo
 - Kafka
-- PostgreSQL
+- Spring Boot Mail
 - [Backblaze](https://www.backblaze.com)
 ___

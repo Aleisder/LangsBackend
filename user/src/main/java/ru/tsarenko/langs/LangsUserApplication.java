@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"ru.tsarenko.langs", "ru.tsarenko.notification"})
+@ComponentScan(basePackages = {"ru.tsarenko.langs", "ru.tsarenko.notification.config"})
 public class LangsUserApplication {
 
 	public static void main(String[] args) {
