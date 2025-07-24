@@ -6,9 +6,12 @@ ___
 |   |-- config
 |   |-- controller
 |   |-- repository
+|   |   |-- mongo
+|   |   |-- redis
 |   |-- service
 |-- notification
 |   |-- config
+|   |   |-- kafka
 |   |-- service
 |-- storage
 |   |-- config
@@ -26,6 +29,7 @@ ___
 - Spring
 - Mongo
 - Kafka
+- Redis
 - Spring Boot Mail
 - [Backblaze](https://www.backblaze.com)
 ___

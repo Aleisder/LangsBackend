@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.tsarenko.langs.service.LessonService;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/education/lesson")
@@ -25,8 +26,7 @@ public class LessonController {
     }
 
     @GetMapping("/{id}")
-    public Document getLesson(@PathVariable String id) {
+    public Map<String, Object> getLesson(@PathVariable String id) {
         return lessonService.getLessonById(id);
     }
-
 }
