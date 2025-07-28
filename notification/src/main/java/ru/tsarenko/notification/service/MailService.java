@@ -6,6 +6,9 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import static ru.tsarenko.notification.service.KafkaService.LANGS_GROUP_ID;
+import static ru.tsarenko.notification.service.KafkaService.USER_CREATED;
+
 @Service
 public class MailService {
 
@@ -21,16 +24,15 @@ public class MailService {
     }
 
     @KafkaListener(
-            topics = "langs-new-user",
-            groupId = "langs"
+            topics = USER_CREATED,
+            groupId = LANGS_GROUP_ID
     )
     public void sendMailToNewUser(String mail) {
-        SimpleMailMessage message = new SimpleMailMessage() {{
-            setFrom(mailUsername);
-            setTo(mail);
-            setSubject("Welcome to Langs!");
-            setText("Thank you for using Langs!");
-        }};
+        var message = new SimpleMailMessage();
+        message.setFrom(mailUsername);
+        message.setTo(mail);
+        message.setSubject("Welcome to Langs!");
+        message.setText("Thank you for using Langs!");
         mailSender.send(message);
     }
 }

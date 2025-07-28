@@ -1,21 +1,21 @@
 package ru.tsarenko.langs.service;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import ru.tsarenko.langs.model.User;
 import ru.tsarenko.langs.repository.UserRepository;
+import ru.tsarenko.notification.service.KafkaService;
 
 @Service
 public class UserService {
 
     private final UserRepository userRepository;
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaService kafkaService;
 
-    public UserService(UserRepository userRepository, KafkaTemplate<String, String> kafkaTemplate) {
+    public UserService(UserRepository userRepository, KafkaService kafkaService) {
         this.userRepository = userRepository;
-        this.kafkaTemplate = kafkaTemplate;
+        this.kafkaService = kafkaService;
     }
 
     public User getUserById(Integer id) {
@@ -27,6 +27,6 @@ public class UserService {
     }
 
     public void createUser(String mail) {
-        kafkaTemplate.send("langs-new-user", mail);
+        kafkaService.sendWelcomeEmail(mail);
     }
 }
