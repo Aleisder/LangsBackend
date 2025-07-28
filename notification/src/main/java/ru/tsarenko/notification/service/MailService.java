@@ -28,12 +28,11 @@ public class MailService {
             groupId = LANGS_GROUP_ID
     )
     public void sendMailToNewUser(String mail) {
-        SimpleMailMessage message = new SimpleMailMessage() {{
-            setFrom(mailUsername);
-            setTo(mail);
-            setSubject("Welcome to Langs!");
-            setText("Thank you for using Langs!");
-        }};
+        var message = new SimpleMailMessage();
+        message.setFrom(mailUsername);
+        message.setTo(mail);
+        message.setSubject("Welcome to Langs!");
+        message.setText("Thank you for using Langs!");
         mailSender.send(message);
     }
 }
