@@ -27,6 +27,7 @@ public class User {
     @JsonProperty("email")
     private String email;
     @JsonProperty("dateOfBirth")
+    @Temporal(TemporalType.DATE)
     @Column(name = "date_of_birth")
     private Date dateOfBirth;
     @ManyToOne

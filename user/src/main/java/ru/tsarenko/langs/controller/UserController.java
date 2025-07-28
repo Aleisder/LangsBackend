@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @PostMapping("/create")
-    public void createUser(@PathParam("mail") String mail) {
+    public void createUser(@RequestParam("mail") String mail) {
         userService.createUser(mail);
     }
 }
