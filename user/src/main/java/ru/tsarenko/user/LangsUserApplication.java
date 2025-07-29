@@ -5,12 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {
-        "ru.tsarenko.user",
-        "ru.tsarenko.notification.service.KafkaService",
-        "ru.tsarenko.notification.service.MailService",
-        "ru.tsarenko.common.config.RedisConfig",
-})
+@ComponentScan(basePackages = {"ru.tsarenko.notification.service", "ru.tsarenko.common.config"})
 public class LangsUserApplication {
 
     public static void main(String[] args) {
