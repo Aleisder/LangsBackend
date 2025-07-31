@@ -17,12 +17,11 @@ public class MinioRepository implements MediaRepository {
 
     @Override
     public Optional<byte[]> getAudioByFilename(String filename) {
-        try {
-            var request = GetObjectArgs.builder()
-                    .bucket("audio")
-                    .object(filename)
-                    .build();
-            var stream = minioClient.getObject(request);
+        var request = GetObjectArgs.builder()
+                .bucket("audio")
+                .object(filename)
+                .build();
+        try (var stream = minioClient.getObject(request)) {
             return Optional.of(stream.readAllBytes());
         } catch (Exception e) {
             return Optional.empty();
