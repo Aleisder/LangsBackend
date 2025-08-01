@@ -27,9 +27,10 @@ ___
 ___
 ## Used
 - Spring
+- Docker-Compose
 - Mongo
 - Kafka
 - Redis
+- [MinIO](https://www.min.io)
 - Spring Boot Mail
-- [Backblaze](https://www.backblaze.com)
 ___
