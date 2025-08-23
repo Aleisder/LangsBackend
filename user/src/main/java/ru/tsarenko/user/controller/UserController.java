@@ -1,6 +1,7 @@
 package ru.tsarenko.user.controller;
 
 import org.springframework.web.bind.annotation.*;
+import ru.tsarenko.user.model.AddUserRequestBody;
 import ru.tsarenko.user.model.User;
 import ru.tsarenko.user.service.UserService;
 
@@ -19,8 +20,8 @@ public class UserController {
         return userService.getUserById(id);
     }
 
-    @PostMapping("/create")
-    public void createUser(@RequestParam("mail") String mail) {
-        userService.createUser(mail);
+    @PostMapping("/add")
+    public void addUser(@RequestBody AddUserRequestBody userBody) {
+        userService.addUser(userBody);
     }
 }

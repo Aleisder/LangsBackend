@@ -15,6 +15,10 @@ public class Language {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @JsonProperty("id")
     private Integer id;
-    @JsonProperty("lang")
-    private String lang;
+    @Column(name = "iso_code")
+    @Enumerated(EnumType.STRING)
+    @JsonProperty("isoProperty")
+    private LanguageCode code;
+    @JsonProperty("name")
+    private String name;
 }
